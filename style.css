@@ -1,1 +1,48 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101020;
+  color: white;
+}
 
+.menu {
+  background: #1c1c3a;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu h1 {
+  margin: 0;
+}
+
+.menu button {
+  background: #4a4aff;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.menu button:hover {
+  background: #0000b5;
+}
+
+.conteudo {
+  padding: 30px;
+}
+
+.espaco-imagem {
+  border: 2px dashed #555;
+  height: 250px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bbbbbb;
+  font-size: 18px;
+}
