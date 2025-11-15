@@ -1,13 +1,9 @@
-// script.js — navegação dos botões principais
-document.addEventListener("DOMContentLoaded", ()=> {
-  // botões da nav na página principal
-  document.querySelectorAll(".nav .btn").forEach(btn=>{
-    btn.addEventListener("click", (e)=>{
-      const target = e.currentTarget.getAttribute("data-target");
-      // abre na mesma aba:
-      window.location.href = target;
-      // se preferir abrir em nova aba, use:
-      // window.open(target, "_blank");
-    });
+// Ao clicar em qualquer botão do menu, abrir a página selecionada
+document.querySelectorAll(".btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const target = btn.getAttribute("data-target");
+    if (target) {
+      window.location.href = target; // Redireciona para a página
+    }
   });
 });
