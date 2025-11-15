@@ -1,102 +1,151 @@
-/* style.css — projeto unificado aproximando-se do design mostrado nas imagens */
+/* ===========================
+   ESTILOS GERAIS
+=========================== */
 
-/* reset (leve) */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-
-/* tipografia */
-:root{
-  --purple:#512f80;
-  --purple-a:#512f80a1;
-  --deep:#0c0b0b;
-  --teal:#36baaf;
-  --darkgreen:#122d15;
-  --white:#ffffff;
-  --muted:#e9e6e6;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
 }
 
-/* corpo base */
-body{font-family: "Inknut Antiqua", "Georgia", serif; background:var(--white); color:var(--deep); -webkit-font-smoothing:antialiased;}
-
-/* topbar / nav */
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 36px;
-  background:linear-gradient(90deg, rgba(0,0,0,0.55), rgba(0,0,0,0.2));
-  position:sticky;
-  top:0;
-  z-index:50;
+body {
+    background-color: #0d0d0d;
+    color: white;
+    line-height: 1.6;
 }
-.topbar .logo{font-size:20px;font-weight:700;color:var(--muted)}
-.nav{display:flex;gap:12px}
-.nav .btn, .nav .link{
-  background:var(--purple);
-  color:var(--white);
-  padding:10px 14px;
-  border-radius:8px;
-  border:none;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-block;
-  font-weight:600;
+
+/* ===========================
+   CONTÊINER CENTRAL
+=========================== */
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 0;
 }
-.nav .btn:hover, .nav .link:hover{transform:translateY(-2px)}
 
-/* containers */
-.container{width:1100px;max-width:calc(100% - 48px);margin:32px auto;display:block;}
+/* ===========================
+   CABEÇALHOS
+=========================== */
 
-/* página 1 — estilo da imagem (claro + cards) */
-.page-1 .hero{position:relative;background:var(--white);padding:28px;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
-.hero-img{width:100%;height:220px;object-fit:cover;border-radius:6px;opacity:0.95}
-.hero-title{font-size:34px;margin-top:14px;color:#1a1a1a}
-.lead{font-size:18px;color:#222;margin-top:8px;line-height:1.5}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
 
-/* cards row */
-.cards{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap}
-.card{flex:1 1 32%;background:#fafafa;border-radius:8px;padding:12px;box-shadow:0 4px 12px rgba(0,0,0,0.06);text-align:center}
-.card img{width:100%;height:160px;object-fit:cover;border-radius:6px}
-.card h3{margin-top:10px;color:#111}
-.card-text{font-size:15px;color:#444;margin-top:6px}
+/* Cores dos títulos igual ao FIGMA */
+.title-purple { color: #c5b3ff; }
+.title-blue   { color: #5568FE; }
+.title-green  { color: #A6D3A6; }
 
-/* footer */
-.footer{margin-top:22px;background:var(--deep);color:var(--white);padding:18px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.footer .contacts{font-weight:700}
+/* ===========================
+   IMAGENS
+=========================== */
 
-/* páginas 2,3,4: layout em duas colunas ou peculiar */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
-.left-column, .right-column{background:transparent}
+.img-card {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
-/* elementos reutilizáveis */
-.panel-img{width:100%;height:340px;object-fit:cover;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
-.panel{background:var(--deep);color:var(--white);padding:16px;border-radius:6px;margin-top:12px;line-height:1.6}
+/* ===========================
+   CARTÕES DE TEXTO
+=========================== */
 
-/* small cards grid (página influenciador) */
-.card-block{display:flex;flex-direction:column;gap:12px}
-.small-card{display:flex;gap:12px;align-items:center;background:#111;padding:10px;border-radius:8px;color:#fff}
-.small-card img{width:70px;height:70px;object-fit:cover;border-radius:6px}
-.small-card p{margin:0;font-size:14px}
+.card {
+    background: rgba(0,0,0,0.55);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
 
-/* texto */
-.text-block{background:#0f0f0f;color:#fff;padding:14px;border-radius:8px;margin-top:14px;line-height:1.6}
-.section-title{font-size:28px;margin-bottom:12px;color:var(--teal)}
+/* Cartões da página “Foco”, iguais ao FIGMA */
+.card-green {
+    background: rgba(35, 80, 60, 0.75);
+}
 
-/* página 3: cores verdes semelhantes */
-.page-3 .panel.green{background:#3f705a}
-.page-3 .section-title{color:#cfeadf}
+/* ===========================
+   LAYOUT EM COLUNAS
+=========================== */
 
-/* página 4: grande hero e bloco */
-.hero-large{display:flex;gap:20px;align-items:center}
-.hero-large .hero-img{width:60%;height:360px}
-.hero-large .hero-text{width:40%;padding:18px;background:var(--darkgreen);color:#fff;border-radius:8px;line-height:1.6;font-size:18px}
-.block-quote{margin-top:18px;padding:18px;background:#0b593f;color:#fff;border-radius:6px}
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
 
-/* responsividade simples */
-@media (max-width:992px){
-  .container{width:92%}
-  .two-col{grid-template-columns:1fr}
-  .cards{flex-direction:column}
-  .hero-img{height:200px}
-  .panel-img{height:260px}
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Para telas menores */
+@media (max-width: 800px) {
+    .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-blue {
+    background: #5568FE;
+    color: white;
+}
+
+.btn-green {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* ===========================
+   PÁGINAS COM FUNDOS DIFERENTES
+=========================== */
+
+.bg-purple {
+    background: #3a2f57;
+    padding: 40px 0;
+}
+
+.bg-green {
+    background: #214332;
+    padding: 40px 0;
+}
+
+.bg-black {
+    background: #0d0d0d;
+    padding: 40px 0;
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 20px 0;
+    opacity: 0.7;
 }
