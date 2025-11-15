@@ -101,28 +101,3 @@ body{
   .hero-left{width:100%}
   .panel-img{height:220px}
 }
-
-/* ====== MELHORIA DE NITIDEZ DAS IMAGENS ====== */
-
-/* Aumenta nitidez em telas grandes */
-img,
-.card-media img,
-.panel-img,
-.small-card img,
-.hero-large .hero-img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    image-rendering: high-quality;
-    -ms-interpolation-mode: nearest-neighbor; /* IE fallback */
-}
-
-/* Garante que a imagem não perca nitidez por esticamento */
-img,
-.card-media img,
-.panel-img,
-.small-card img,
-.hero-large .hero-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
