@@ -1,142 +1,223 @@
 /* ===========================
-   ESTILOS GERAIS
+   RESET E BASE
 =========================== */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    background-color: #0d0d0d;
+    background: #0d0d0d;
     color: white;
     line-height: 1.6;
 }
 
 /* ===========================
-   CONTÊINER CENTRAL
+   TOPO (igual ao Figma)
+=========================== */
+
+.topbar {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.nav button,
+.nav .link {
+    background: #5568FE;
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav button:hover,
+.nav .link:hover {
+    opacity: 0.8;
+}
+
+/* ===========================
+   PÁGINAS COM FUNDO IGUAL AO FIGMA
+=========================== */
+
+.page-1 { background: #3a2f57; } /* Roxo */
+.page-2 { background: #0d0d0d; } /* Preto */
+.page-3 { background: #0d0d0d; } /* Preto */
+.page-4 { background: #214332; } /* Verde */
+
+/* ===========================
+   CONTAINER
 =========================== */
 
 .container {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 40px 0;
 }
 
 /* ===========================
-   CABEÇALHOS
+   HERO (tela inicial)
 =========================== */
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: left;
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Cores dos títulos igual ao FIGMA */
-.title-purple { color: #c5b3ff; }
-.title-blue   { color: #5568FE; }
-.title-green  { color: #A6D3A6; }
-
-/* ===========================
-   IMAGENS
-=========================== */
-
-.img-card {
+.hero-img {
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    color: #c5b3ff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.lead {
+    font-size: 1.15rem;
+    opacity: 0.95;
 }
 
 /* ===========================
-   CARTÕES DE TEXTO
+   CARDS TRIPLOS NA HOME
 =========================== */
 
-.card {
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.cards .card {
+    text-align: center;
     background: rgba(0,0,0,0.55);
     padding: 20px;
     border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
-/* Cartões da página “Foco”, iguais ao FIGMA */
-.card-green {
-    background: rgba(35, 80, 60, 0.75);
+.cards img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 /* ===========================
-   LAYOUT EM COLUNAS
+   LAYOUT 2 COLUNAS (Foco / Influenciador)
 =========================== */
 
-.grid-3 {
+.two-col {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
 }
 
-.grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-/* Para telas menores */
-@media (max-width: 800px) {
-    .grid-3, .grid-2 {
-        grid-template-columns: 1fr;
-    }
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /* ===========================
-   BOTÕES
+   PAINÉIS DE TEXTO
 =========================== */
 
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 10px;
-    transition: 0.3s;
+.panel {
+    background: rgba(0,0,0,0.55);
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
 }
 
-.btn-blue {
-    background: #5568FE;
-    color: white;
+.panel.green {
+    background: rgba(35,80,60,0.75);
 }
 
-.btn-green {
-    background: #4CAF50;
-    color: white;
-}
-
-.btn:hover {
-    opacity: 0.8;
+.panel-img {
+    width: 100%;
+    border-radius: 12px;
 }
 
 /* ===========================
-   PÁGINAS COM FUNDOS DIFERENTES
+   CARDS PEQUENOS (Influenciador)
 =========================== */
 
-.bg-purple {
-    background: #3a2f57;
-    padding: 40px 0;
+.card-block {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-.bg-green {
-    background: #214332;
-    padding: 40px 0;
+.small-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0,0,0,0.5);
+    padding: 12px;
+    border-radius: 10px;
 }
 
-.bg-black {
-    background: #0d0d0d;
-    padding: 40px 0;
+.small-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ===========================
+   SONHO — ESTILO
+=========================== */
+
+.hero-large {
+    position: relative;
+}
+
+.hero-large img {
+    width: 100%;
+    height: 280px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.hero-text {
+    background: rgba(0,0,0,0.55);
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 12px;
+}
+
+.block-quote {
+    background: rgba(0,0,0,0.55);
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
 /* ===========================
@@ -146,6 +227,24 @@ h1 {
 .footer {
     text-align: center;
     font-size: 0.9rem;
-    padding: 20px 0;
-    opacity: 0.7;
+    padding: 30px 0;
+    opacity: 0.8;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media (max-width: 850px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
 }
