@@ -1,250 +1,103 @@
-/* ===========================
-   RESET E BASE
-=========================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+/* ====== RESET E BASE ====== */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Poppins", Arial, sans-serif;
+  background:#0d0d0d;
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
 }
 
-body {
-    background: #0d0d0d;
-    color: white;
-    line-height: 1.6;
+/* ====== TOPO ====== */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 28px;
+  background: rgba(0,0,0,0.35);
+  position:sticky;
+  top:0;
+  z-index:50;
 }
-
-/* ===========================
-   TOPO (igual ao Figma)
-=========================== */
-
-.topbar {
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(4px);
+.logo{font-weight:700}
+.nav{display:flex;gap:12px;align-items:center}
+.nav button, .nav .link{
+  background:#fff;
+  color:#111;
+  padding:8px 16px;
+  border-radius:999px;
+  border:2px solid rgba(0,0,0,0.12);
+  cursor:pointer;
+  font-weight:700;
 }
+.nav button:hover, .nav .link:hover{transform:translateY(-2px)}
 
-.logo {
-    font-size: 1.6rem;
-    font-weight: bold;
+/* ====== CONTAINER ====== */
+.container{width:92%;max-width:1100px;margin:28px auto;}
+
+/* ====== HERO (home) ====== */
+.hero-home{display:flex;gap:24px;align-items:center;margin-bottom:28px}
+.hero-left{flex:0 0 170px}
+.hero-square{
+  width:170px;height:170px;object-fit:cover;border-radius:8px;border:6px solid rgba(255,255,255,0.06);
+  box-shadow:0 8px 30px rgba(0,0,0,0.6);
 }
+.hero-right{flex:1}
+.hero-title{font-size:36px;color:#fff;margin-bottom:12px}
+.lead{color:rgba(255,255,255,0.9);font-size:16px;line-height:1.6}
 
-.nav button,
-.nav .link {
-    background: #5568FE;
-    padding: 10px 18px;
-    border-radius: 30px;
-    border: none;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 8px;
-    text-decoration: none;
-    transition: 0.2s;
-}
+/* ====== CARDS (home) ====== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.card{background:rgba(255,255,255,0.03);border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.card-media{position:relative}
+.card-media img{width:100%;height:210px;object-fit:cover;display:block}
+.card-overlay{
+  position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.6);padding:8px 12px;border-radius:8px;font-weight:700;color:#fff}
+.card-body{padding:16px}
+.card-text{color:rgba(255,255,255,0.92)}
 
-.nav button:hover,
-.nav .link:hover {
-    opacity: 0.8;
-}
+/* ====== TWO-COL LAYOUT ====== */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.left-column,.right-column{display:flex;flex-direction:column;gap:16px}
 
-/* ===========================
-   PÁGINAS COM FUNDO IGUAL AO FIGMA
-=========================== */
+/* ====== PANELS E IMAGENS ====== */
+.panel{background:rgba(0,0,0,0.5);padding:16px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.panel.green{background:linear-gradient(180deg, #284b3a, #163023)}
+.panel-img-wrap{position:relative}
+.panel-img{width:100%;height:320px;object-fit:cover;border-radius:10px;display:block}
+.img-caption{
+  position:absolute;left:14px;bottom:14px;background:rgba(0,0,0,0.55);padding:8px 12px;border-radius:8px;font-weight:700;color:#fff}
 
-.page-1 { background: #3a2f57; } /* Roxo */
-.page-2 { background: #0d0d0d; } /* Preto */
-.page-3 { background: #0d0d0d; } /* Preto */
-.page-4 { background: #214332; } /* Verde */
+/* ====== SMALL CARDS ====== */
+.card-block{display:flex;flex-direction:column;gap:12px}
+.small-card{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,0.03);padding:10px;border-radius:10px}
+.small-card img{width:84px;height:84px;object-fit:cover;border-radius:8px}
+.small-card-text{font-weight:700;color:#fff}
 
-/* ===========================
-   CONTAINER
-=========================== */
+/* ====== TEXT BLOCK ====== */
+.text-block{background:rgba(0,0,0,0.55);padding:14px;border-radius:10px;color:#fff}
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 0;
-}
+/* ====== HERO LARGE (sonho) ====== */
+.hero-large{display:flex;gap:20px;align-items:center;flex-direction:column}
+.hero-large .hero-img{width:100%;height:360px;object-fit:cover;border-radius:10px}
+.hero-text{background:rgba(255,255,255,0.03);padding:18px;border-radius:10px}
 
-/* ===========================
-   HERO (tela inicial)
-=========================== */
+/* ====== BLOCK QUOTE ====== */
+.block-quote{background:rgba(0,0,0,0.55);padding:18px;border-radius:12px;margin-top:18px;color:#fff}
 
-.hero {
-    text-align: center;
-    margin-bottom: 40px;
-}
+/* ====== FOOTER ====== */
+.footer{margin-top:28px;background:transparent;padding:18px;border-top:1px solid rgba(255,255,255,0.03);color:rgba(255,255,255,0.8)}
 
-.hero-img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 25px;
-}
+/* ====== PÁGINAS (cores aguadas) ====== */
+.page-1{background:linear-gradient(180deg,#3d2f5a 0%, #2f2545 100%)}
+.page-2{background:#0d0d0d}
+.page-3{background:#0d0d0d}
+.page-4{background:linear-gradient(180deg,#1f4c39 0%, #113022 100%)}
 
-.hero-title {
-    font-size: 2.4rem;
-    color: #c5b3ff;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.lead {
-    font-size: 1.15rem;
-    opacity: 0.95;
-}
-
-/* ===========================
-   CARDS TRIPLOS NA HOME
-=========================== */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 40px;
-}
-
-.cards .card {
-    text-align: center;
-    background: rgba(0,0,0,0.55);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.4);
-}
-
-.cards img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-/* ===========================
-   LAYOUT 2 COLUNAS (Foco / Influenciador)
-=========================== */
-
-.two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-}
-
-.left-column,
-.right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* ===========================
-   PAINÉIS DE TEXTO
-=========================== */
-
-.panel {
-    background: rgba(0,0,0,0.55);
-    padding: 18px;
-    border-radius: 10px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.4);
-}
-
-.panel.green {
-    background: rgba(35,80,60,0.75);
-}
-
-.panel-img {
-    width: 100%;
-    border-radius: 12px;
-}
-
-/* ===========================
-   CARDS PEQUENOS (Influenciador)
-=========================== */
-
-.card-block {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.small-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(0,0,0,0.5);
-    padding: 12px;
-    border-radius: 10px;
-}
-
-.small-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-/* ===========================
-   SONHO — ESTILO
-=========================== */
-
-.hero-large {
-    position: relative;
-}
-
-.hero-large img {
-    width: 100%;
-    height: 280px;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-.hero-text {
-    background: rgba(0,0,0,0.55);
-    padding: 18px;
-    border-radius: 10px;
-    margin-top: 12px;
-}
-
-.block-quote {
-    background: rgba(0,0,0,0.55);
-    padding: 22px;
-    border-radius: 12px;
-    margin-top: 30px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.4);
-}
-
-/* ===========================
-   RODAPÉ
-=========================== */
-
-.footer {
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 30px 0;
-    opacity: 0.8;
-}
-
-/* ===========================
-   RESPONSIVIDADE
-=========================== */
-
-@media (max-width: 850px) {
-    .two-col {
-        grid-template-columns: 1fr;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-    }
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 900px){
+  .cards{grid-template-columns:1fr}
+  .hero-home{flex-direction:column;align-items:flex-start}
+  .hero-left{width:100%}
+  .panel-img{height:220px}
 }
